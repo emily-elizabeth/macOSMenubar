@@ -2,7 +2,7 @@
   <name>com.example.menubarheight</name>
   <title>MenuBar Height</title>
   <author>Emily-Elizabeth Howard</author>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <license>community</license>
   <type>library</type>
   <requires name="com.livecode.foreign"/>
@@ -16,4 +16,5 @@
   <metadata key="platform">mac</metadata>
   <handler name="MenuBarHeight" parameters="" return="number"/>
   <handler name="MenuBarVisible" parameters="" return="boolean"/>
+  <handler name="SetMenuBarVisible" parameters="in boolean" return="any"/>
 </package>

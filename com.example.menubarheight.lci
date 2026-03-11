@@ -9,4 +9,5 @@ import module com.example.menubarheight
   use com.livecode.system
   unsafe handler MenuBarHeight() returns Number
   unsafe handler MenuBarVisible() returns Boolean
+  unsafe handler SetMenuBarVisible(in pVisible as Boolean) returns optional any
 end module
