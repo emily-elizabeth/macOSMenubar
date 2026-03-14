@@ -1,0 +1,97 @@
+Library: org.openxtalk.macosmenubar
+
+Type: library
+
+Title: MenuBar Height
+
+Version: 1.0.0
+
+Author: Example
+
+OS: mac
+
+Summary: Provides access to macOS menu bar properties via NSMenu Objective-C bindings.
+
+Description:
+The org.openxtalk.macosmenubar library exposes two macOS menu bar queries
+by binding directly to Objective-C class methods on NSMenu:
+
+  - +[NSMenu menuBarHeight]
+  - +[NSMenu menuBarVisible]
+
+On non-Mac platforms all handlers return safe default values (0 or false).
+
+Tags: menubar, mac, NSMenu, system, UI
+
+
+
+Name: MenuBarHeight
+
+Type: handler
+
+Syntax: MenuBarHeight()
+
+Summary: Returns the height of the macOS menu bar in points.
+
+OS: mac
+
+Returns: A Number representing the menu bar height in points.
+
+Description:
+Calls the Objective-C class method +[NSMenu menuBarHeight] and returns
+the result as an LCB Number.
+
+On macOS the value is typically 24 points on standard displays. It may
+differ on Macs with a notch or when large-text accessibility options are
+enabled.
+
+On non-Mac platforms this handler returns 0.
+
+Example:
+    put MenuBarHeight() into tHeight
+    answer "Menu bar is" && tHeight && "points tall"
+
+Example:
+    -- Position a window just below the menu bar
+    set the top of this stack to MenuBarHeight() + 4
+
+Tags: menubar, mac, NSMenu, height
+
+
+
+Name: MenuBarVisible
+
+Type: handler
+
+Syntax: MenuBarVisible()
+
+Summary: Returns whether the macOS menu bar is currently visible.
+
+OS: mac
+
+Returns: A Boolean — true if the menu bar is visible, false if it is hidden.
+
+Description:
+Calls the Objective-C class method +[NSMenu menuBarVisible] and returns
+the result as an LCB Boolean.
+
+The menu bar can be hidden system-wide via System Settings > Appearance,
+or by an application running in full-screen mode.
+
+On non-Mac platforms this handler returns false.
+
+Example:
+    if MenuBarVisible() then
+        answer "Menu bar is visible"
+    else
+        answer "Menu bar is hidden"
+    end if
+
+Example:
+    if MenuBarVisible() then
+        put MenuBarHeight() into tOffset
+    else
+        put 0 into tOffset
+    end if
+
+Tags: menubar, mac, NSMenu, visible

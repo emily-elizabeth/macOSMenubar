@@ -1,4 +1,4 @@
-# com.example.menubarheight
+# org.openxtalk.macosmenubar
 
 A LiveCode Builder (LCB) extension that exposes macOS menu bar information via Objective-C bindings to `NSMenu`.
 
